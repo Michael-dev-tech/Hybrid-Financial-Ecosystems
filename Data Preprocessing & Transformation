@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+
+# Load the dataset
+df = pd.read_csv('survey_data_2026.csv')
+
+# Define mappings for Likert scales (Text to Numeric)
+importance_map = {
+    'Foarte important / Esențial': 5,
+    'Important': 4,
+    'Neutru / Nu am o opinie': 3,
+    'Puțin important': 2,
+    'Deloc important': 1
+}
+
+# Define demographic mappings for regression
+income_map = {
+    '0-3000': 1500, '3001-6000': 4500, '6001-8000': 7000, 
+    '8001-10000': 9000, '10000+': 12000
+}
+
+age_map = {
+    '18 - 29': 24, '30 - 39': 35, '40 - 49': 45, 
+    '50 - 59': 55, '60+': 65
+}
+
+# Apply transformations
+df['Digitalization_Score'] = df['Digitalizare'].map(importance_map)
+df['Income_Num'] = df['Venit'].map(income_map)
+df['Age_Num'] = df['Varsta'].map(age_map)
+
+# Filter valid data for analysis
+df_model = df.dropna(subset=['Income_Num', 'Age_Num', 'Digitalization_Score'])

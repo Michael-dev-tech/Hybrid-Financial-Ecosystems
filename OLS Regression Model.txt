@@ -1,0 +1,18 @@
+import statsmodels.api as sm
+
+# Define Predictors (X) and Target (y)
+X = df_model[['Age_Num', 'Income_Num']]
+y = df_model['Digitalization_Score']
+
+# Add constant for the intercept (beta_0)
+X = sm.add_constant(X)
+
+# Fit the Ordinary Least Squares (OLS) model
+model = sm.OLS(y, X).fit()
+
+# Output the statistical summary (P-values, R-squared)
+print(model.summary())
+
+# Interpretation Logic
+if model.pvalues['Age_Num'] < 0.05:
+    print("Significant Generational Divide detected.")

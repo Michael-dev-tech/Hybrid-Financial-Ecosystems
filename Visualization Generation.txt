@@ -1,0 +1,19 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Set academic style
+sns.set_theme(style="whitegrid")
+
+# Figure 2: Generational Divide Visualization
+plt.figure(figsize=(10, 6))
+sns.regplot(
+    x='Age_Num', 
+    y='Digitalization_Score', 
+    data=df_model, 
+    scatter_kws={'alpha':0.3}, 
+    line_kws={'color':'red'}
+)
+plt.title('Regression Analysis: Age vs. Digitalization Demand')
+plt.xlabel('Age (Years)')
+plt.ylabel('Importance Score (1-5)')
+plt.savefig('figure2_regression.png')
