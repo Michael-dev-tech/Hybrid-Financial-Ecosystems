@@ -4,6 +4,8 @@
 [![Status](https://img.shields.io/badge/Status-Research_Complete-success)]()
 [![License](https://img.shields.io/badge/License-MIT-green)]()
 
+ResearchGate: https://www.researchgate.net/publication/399987524_Analytical_and_Predictive_Study_on_Technological_Dynamics_in_the_Romanian_IT_Market
+
 **A quantitative research project analyzing the shift from traditional banking to digital ecosystems in Romania.**
 
 This repository contains the source code, dataset analysis, and the final research paper titled *"Hybrid Financial Ecosystems: A Quantitative Analysis of Satisfaction Determinants and Digital Adoption in the Romanian Banking Sector (2026)"*.
